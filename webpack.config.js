@@ -3,18 +3,16 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
+  entry: './src/A0019-exercicio/A0019-exercicio.ts',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: [
-          {
-            loader: 'ts-loader',
-            options: {
-              transpileOnly: true,
-            },
-          },
-        ],
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          configFile: 'tsconfig.frontend.json',
+        },
       },
     ],
   },
